@@ -17,7 +17,7 @@ def compute_weight(np.uint8_t thermal_broad,
     		       np.ndarray[np.float64_t, ndim=1] T):
 
     cdef int i, n
-    cdef double v2_th, x
+    cdef double v2_th
     cdef np.ndarray[np.float64_t, ndim=1] w
 
     n = v.shape[0]
