@@ -18,7 +18,8 @@ if sys.version_info.major < 3:
 else:
     import unittest.mock as mock
 import unittest
-import yt.utilities.command_line
+from yt.utilities import command_line
+from yt.utilities.configure import CONFIG
 import yt.config
 from yt.config import \
     CURRENT_CONFIG_FILE, _OLD_CONFIG_FILE, CONFIG_DIR, YTConfigParser
@@ -53,9 +54,9 @@ def setUpModule():
             os.rename(cfgfile, cfgfile + '.bak_test')
 
             if cfgfile == CURRENT_CONFIG_FILE:
-                yt.utilities.configure.CONFIG = YTConfigParser()
-                if not yt.utilities.configure.CONFIG.has_section('yt'):
-                    yt.utilities.configure.CONFIG.add_section('yt')
+                CONFIG = YTConfigParser()
+                if not CONFIG.has_section('yt'):
+                    CONFIG.add_section('yt')
 
 
 def tearDownModule():
@@ -73,7 +74,7 @@ class TestYTConfig(unittest.TestCase):
                 mock.patch('sys.exit', side_effect=SysExitException) as exit,\
                 captureOutput() as output:
             try:
-                yt.utilities.command_line.run_main()
+                command_line.run_main()
             except SysExitException:
                 args = exit.mock_calls[0][1]
                 retcode = args[0] if len(args) else 0
