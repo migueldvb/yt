@@ -254,7 +254,7 @@ _common_options = dict(
     all     = dict(longname="--all", dest="reinstall",
                    default=False, action="store_true",
                    help=("Reinstall the full yt stack in the current location."
-                         "This option has been deprecated and will not have any"
+                         "This option has been deprecated and will not have any "
                          "effect."),),
     ds      = dict(short="ds", action=GetParameterFiles,
                    nargs="+", help="datasets to run on"),

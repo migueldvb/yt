@@ -211,8 +211,8 @@ class PlotWindowWCS(object):
             # Attempt import from the old WCSAxes package first
             from wcsaxes import WCSAxes
             issue_deprecation_warning("Support for the standalone 'wcsaxes' "
-                                      "package is deprecated since its"
-                                      "functionality has been merged into"
+                                      "package is deprecated since its "
+                                      "functionality has been merged into "
                                       "AstroPy, and will be removed in a "
                                       "future release. It is recommended to "
                                       "use the version bundled with AstroPy "

@@ -533,7 +533,7 @@ class Dataset(object):
                         "{1}. Choices are {2}.".format(value, format_property,
                             available_formats[format_property]))
         else:
-            raise ValueError("{0} not a recognized format_property. Available"
+            raise ValueError("{0} not a recognized format_property. Available "
                              "properties are: {1}".format(format_property,
                                                          list(available_formats.keys())))
 
